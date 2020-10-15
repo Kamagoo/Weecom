@@ -32,7 +32,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'nama_depan','id' => 'nama_depan','class' => 'form-control','placeholder' => 'Nama Depan'];
+                                    $data = ['name' => 'nama_depan','id' => 'nama_depan','class' => 'form-control','value' =>set_value('nama_depan'),'placeholder' => 'Nama Depan'];
                                     echo form_input($data);
                                     echo form_error('nama_depan');
 
@@ -45,7 +45,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'nama_belakang','id' => 'nama_belakang','class' => 'form-control','placeholder' => 'Nama Belakang'];
+                                    $data = ['name' => 'nama_belakang','id' => 'nama_belakang','class' => 'form-control','value' =>set_value('nama_belakang'),'placeholder' => 'Nama Belakang'];
                                     echo form_input($data);
                                     echo form_error('nama_belakang');
 
@@ -58,7 +58,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'email','id' => 'email','class' => 'form-control','placeholder' => 'Email'];
+                                    $data = ['name' => 'email','id' => 'email','class' => 'form-control','value' =>set_value('email'),'placeholder' => 'Email'];
                                     echo form_input($data);
                                     echo form_error('email');
 
@@ -71,7 +71,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'dob','id' => 'dob','class' => 'form-control','placeholder' => 'Tanggal lahir'];
+                                    $data = ['name' => 'dob','id' => 'dob','class' => 'form-control','value' =>set_value('dob'),'placeholder' => 'Tanggal lahir'];
                                     echo form_input($data);
                                     echo form_error('dob');
 
@@ -84,7 +84,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'alamat','id' => 'alamat','class' => 'form-control','placeholder' => 'Alamat'];
+                                    $data = ['name' => 'alamat','id' => 'alamat','class' => 'form-control','value' =>set_value('alamat'),'placeholder' => 'Alamat'];
                                     echo form_input($data);
                                     echo form_error('alamat');
 
@@ -97,7 +97,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'nomor_telepon','id' => 'nomor_telepon','class' => 'form-control','placeholder' => 'Masukan Nomor Telepon'];
+                                    $data = ['name' => 'nomor_telepon','id' => 'nomor_telepon','class' => 'form-control','value' =>set_value('nomor_telepon'),'placeholder' => 'Masukan Nomor Telepon'];
                                     echo form_input($data);
                                     echo form_error('nomor_telepon');
 
@@ -110,7 +110,7 @@
                             <div class="col-9">
                                 <?php
                                     
-                                    $data = ['name' => 'nomor_hp','id' => 'nomor_hp','class' => 'form-control','placeholder' => 'Masukan Nomor Hp'];
+                                    $data = ['name' => 'nomor_hp','id' => 'nomor_hp','class' => 'form-control','value' =>set_value('nomor_hp'),'placeholder' => 'Masukan Nomor Hp'];
                                     echo form_input($data);
                                     echo form_error('nomor_hp');
 
@@ -125,7 +125,7 @@
                                     <div class="col-4">
                                         <label class="radio-inline">
                                             <?php
-                                                $data = ['name' => 'jenis_kelamin','id' => 'jenis_kelamin'];
+                                                $data = ['name' => 'jenis_kelamin','id' => 'jenis_kelamin','checked' =>set_radio('jenis_kelamin', 'wanita')];
                                                 echo form_radio($data, 'wanita');
                                             ?>
                                             Wanita
@@ -135,7 +135,7 @@
                                     <div class="col-4">
                                         <label class="radio-inline">
                                         <?php
-                                            $data = ['name' => 'jenis_kelamin','id' => 'jenis_kelamin'];
+                                            $data = ['name' => 'jenis_kelamin','id' => 'jenis_kelamin','checked' =>set_radio('jenis_kelamin', 'pria')];
                                             echo form_radio($data, 'pria');
                                         ?>
                                         Pria
