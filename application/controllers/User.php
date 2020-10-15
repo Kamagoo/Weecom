@@ -6,7 +6,8 @@ class User extends CI_Controller {
     public function __construct(){
         parent::__construct();
 
-        $this->load->model('User_model'); 
+        $this->load->library('Password'); 
+        $this->load->model('User_model');
         
     }
 
@@ -43,7 +44,7 @@ class User extends CI_Controller {
                              'nomor_telepon'    => $this->input->post('nomor_telepon'),
                              'nomor_hp'         => $this->input->post('nomor_hp'),
                              'jenis_kelamin'    => $this->input->post('jenis_kelamin'),
-                             'password'         => $this->input->post('password'),
+                             'password'         => $this->password->hash($this->input->post('password')),
                              'id_departemen'    => 1,
                              'id_posisi'        => 1,
                              'dibuat'           => date('y-m-d H:i:s'),
