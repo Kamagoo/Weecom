@@ -53,6 +53,12 @@ class User extends CI_Controller {
                     ];
             $this->User_model->create($dataRegister);
 
+            redirect('login');
+
+        }
+
+        public function login(){
+            echo "ini adalah halaman login";
         }
     }
 
