@@ -23,7 +23,7 @@ class User extends CI_Controller {
         
         $this->form_validation->set_rules('nama_depan','Nama Depan','required');
         $this->form_validation->set_rules('nama_belakang','Nama Belakang','required');
-        $this->form_validation->set_rules('email','Email','required|is_unique[karyawan.email]');
+        $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[karyawan.email]');
         $this->form_validation->set_rules('dob','Tanggal Lahir','required');
         $this->form_validation->set_rules('alamat','Alamat','required');
         $this->form_validation->set_rules('nomor_telepon','Nomor Telepon','required');
@@ -73,7 +73,7 @@ class User extends CI_Controller {
     }
 
     public function prosesLogin(){
-        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('email','Email','required|valid_email');
         $this->form_validation->set_rules('password','Password','required|min_length[6]');
 
         if($this->form_validation->run() == false){
@@ -85,7 +85,9 @@ class User extends CI_Controller {
 
             $user = $this->User_model->login($email);
 
-            if($this->password->verify($password, $user->password)){
+            $passwordHash = $user->password ?? false;
+
+            if($this->password->verify($password, $passwordHash)){
                 
                 $dataLogin = ['logged_in' => TRUE,
                                 'user_id' => $user->id,
