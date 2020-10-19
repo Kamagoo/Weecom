@@ -29,7 +29,7 @@
 
                     <?php
 
-                        echo form_open(base_url('user/prosesRegister'), ['class' => 'form-weecom']);
+                        echo form_open(base_url('user/prosesLogin'), ['class' => 'form-weecom']);
 
 
                     ?>

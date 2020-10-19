@@ -65,11 +65,24 @@ class User extends CI_Controller {
     }
 
      public function login(){
-            $data['title'] = "Register";
+            $data['title'] = "Login";
 
         $this->load->view('template/header', $data);
         $this->load->view('login', $data);
         $this->load->view('template/footer', $data);
+    }
+
+    public function prosesLogin(){
+        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('password','Password','required|min_length[6]');
+
+        if($this->form_validation->run() == false){
+            $this->login();
+        } else {
+            echo "login berhasil";
+        }
+
+
     }
 
 }
