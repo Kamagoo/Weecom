@@ -85,9 +85,9 @@ class User extends CI_Controller {
 
             $user = $this->User_model->login($email);
 
-            $passwordHash = $user->password ?? false;
+            //$passwordHash = $user->password ?? false;
 
-            if($this->password->verify($password, $passwordHash)){
+            if(!empty ($user->password) && $this->password->verify($password, $user->password)){
                 
                 $dataLogin = ['logged_in' => TRUE,
                                 'user_id' => $user->id,
