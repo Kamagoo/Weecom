@@ -86,7 +86,13 @@ class User extends CI_Controller {
             $user = $this->User_model->login($email);
 
             if($this->password->verify($password, $user->password)){
-                echo 'Login berhasil';
+                
+                $dataLogin = ['logged_in' => TRUE,
+                                'user_id' => $user->id,
+                                'nama_depan' => $user->nama_depan,
+                                'nama_belakang' => $user->nama_belakang];
+                $this->session->set_userdata($dataLogin);
+
             }else{
                 echo 'Login gagal';
             }
