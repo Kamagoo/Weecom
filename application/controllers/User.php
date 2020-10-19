@@ -51,7 +51,13 @@ class User extends CI_Controller {
                              'diganti'          => date('y-m-d H:i:s'),
                              'status'           => 'interview'
                     ];
+
+            
             $this->User_model->create($dataRegister);
+
+            $dataPesan = ['pesan' => 'Akun Anda berhasil dibuat'];
+
+            $this->session->set_flashdata($dataPesan);
 
             redirect('login');
 

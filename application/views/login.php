@@ -20,6 +20,13 @@
                 <div class="card-header">Login</div>
 
                 <div class="card-body">
+
+                    <?php if($this->session->flashdata('pesan')): ?>
+                    
+                    <div class='alert alert-success'><?php echo $this->session->flashdata('pesan'); ?></div>
+
+                    <?php endif; ?>
+
                     <?php
 
                         echo form_open(base_url('user/prosesRegister'), ['class' => 'form-weecom']);
