@@ -79,7 +79,17 @@ class User extends CI_Controller {
         if($this->form_validation->run() == false){
             $this->login();
         } else {
-            echo "login berhasil";
+
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+
+            $user = $this->User_model->login($email);
+
+            if($this->password->verify($password, $user->password)){
+                echo 'Login berhasil';
+            }else{
+                echo 'Login gagal';
+            }
         }
 
 

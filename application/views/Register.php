@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <?php
 
-                        echo form_open(base_url('user/prosesRegister'), ['class' => 'form-weecom']);
+                        echo form_open(base_url('register/proses'), ['class' => 'form-weecom']);
 
 
                     ?>
